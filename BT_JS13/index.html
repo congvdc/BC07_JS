@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <header>
+        <!-- place navbar here -->
+    </header>
+    <main>
+
+        <!-- BT1 -->
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    BT1: Tính tiền lương nhân viên
+                    <p>Viết chương trình tính tiền lương nhân viên</p>
+                    <p>Lương 1 ngày: 100.000; Cho người dùng nhập vào số ngày làm</p>
+                    <p>Công thức tính lương: Lương 1 ngày * số ngày làm</p>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="soNgay" class="form-label">Nhập số ngày làm</label>
+                        <input type="text" class="form-control" id="soNgay">
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-primary">Tính tiền lương</button>
+                    </div>
+                </div>
+                <div class="card-footer text-muted" id="hienThiTienLuong">
+                    
+                </div>
+            </div>    
+        </div>
+
+        <br><br>
+
+        <!-- BT2 -->
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <p>BT2: Tính giá trị trung bình</p>
+                    <p>Viết chương trình nhập vào 5 số thực</p>
+                    <p>Tính giá trị trung bình của 5 số này và xuất ra màn hình</p>
+                    <p>Gợi ý: Giá trị trung bình là tổng của 5 số người dùng nhập chia cho 5</p>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="soThuc" class="form-label">Nhập 5 số thực</label>
+                        <input type="number" class="form-control" id="soThuc">
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-secondary">Tính giá trị trung bình</button>
+                    </div>
+                </div>
+                <div class="card-footer text-muted" id="hienThiTrungBinh">
+                    
+                </div>
+            </div>    
+        </div>
+
+        <br><br>
+
+        <!-- BT3 -->
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <p>BT3: Quy đổi tiền</p>
+                    <p>Giá USD hiện nay đang là 23.500 VND</p>
+                    <p>Viết chương trình quy đổi từ USD sang VND</p>
+                    <p>Cho người dùng nhập vào số tiền USD</p>
+                    <p>Tính va xuất ra số tiền sau quy đổi VND</p>
+                    <p>VD: Người dùng nhập 2 USD => Xuất ra 47.000 VND</p>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="tienUSD" class="form-label">Nhập số tiền USD muốn đổi</label>
+                        <input type="number" class="form-control" id="tienUSD">
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-success">Quy đổi sang VND</button>
+                    </div>
+                </div>
+                <div class="card-footer text-muted" id="hienThiTienVND">
+                    
+                </div>
+            </div>    
+        </div>
+
+        <br><br>
+
+        <!-- BT4 -->
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <p>BT4: Tính diện tích, chu vi hình chữ nhật</p>
+                    <p>Viết chương trình nhập vào 2 chiều dài và chiều rộng hình chữ nhật</p>
+                    <p>Tính và xuất ra dện tích, chu vi của hình chữ nhật đó</p>
+                    <p>Công thức thức:</p>
+                    <p>- Diện tích = dài * rộng</p>
+                    <p>- Chu vi = ( dài + rộng ) * 2</p>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="chieuDai" class="form-label">Nhập chiều dài</label>
+                        <input type="number" class="form-control" id="chieuDai">
+                    </div>
+                    <div class="mb-3">
+                        <label for="chieuRong" class="form-label">Nhập chiều rộng</label>
+                        <input type="number" class="form-control" id="chieuRong">
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-danger">Tính Chu vi & Diện tích</button>
+                    </div>
+                </div>
+                <div class="card-footer text-muted" id="tinhHCN">
+                    
+                </div>
+            </div>    
+        </div>
+
+        <br><br>
+
+        <!-- BT5 -->
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <p>BT5: Tính tổng 2 ký số</p>
+                    <p>Viết chương trình nhập vào 1 số có 2 chữ số (VD: 12, 44, 83)</p>
+                    <p>Tính tổng 2 ký số của số vừa nhập</p>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="kySo" class="form-label">Nhập 2 ký số</label>
+                        <input type="number" class="form-control" id="kySo">
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-warning">Tính tổng giá trị</button>
+                    </div>
+                </div>
+                <div class="card-footer text-muted" id="tinhTong">
+                    
+                </div>
+            </div>    
+        </div>
+        
+        <br><br>
+
+    </main>
+    <footer>
+        <!-- place footer here -->
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
