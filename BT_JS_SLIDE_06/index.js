@@ -39,8 +39,35 @@ function tinhGiaiThua() {
 }
 
 
-// BT5: In số nguyên tố
-function inSoNguyenTo() {
-    var soA = document.getElementById("soA").value * 1;
+//BT4: DIV chẵn lẻ
+function inTheDiv() {
+    for(var i = 1; i <= 10; i++){
+        if (i % 2 == 0){
+            document.querySelector(".bg-warning").innerHTML += '<div class="bg-danger bg-opacity-75 p-2 text-white mt-3">Chẵn</div>';
+        } else {
+            document.querySelector(".bg-warning").innerHTML += '<div class="bg-primary bg-opacity-75 p-2 text-white mt-3">Lẻ</div>';
+        }
+    }
+}
 
+
+// BT5: In số nguyên tố
+function inSoNguyenTo(){
+    var soABatKi = +document.getElementById("soA").value;
+    var result = "";
+    
+    for (var i = 0; i <= soABatKi; i++) {
+        var dem = 0;
+    
+        for (var j = 2; j < i; j++) {
+            if (i % j == 0) {
+                dem = 1;
+                break;
+            }
+        }
+        if (i > 1 && dem == 0) {
+            result += i; 
+        }
+        document.querySelector(".bg-dark").innerHTML +=  result;
+    }
 }
