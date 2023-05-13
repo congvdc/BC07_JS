@@ -83,3 +83,60 @@ function sapXepTangDan() {
 }
 document.getElementById("sapXepTangDan").onclick = sapXepTangDan;
 
+function kiemTraSoNguyenTo(n) {
+    if(n < 2) {
+        return false;
+    }
+
+    for (var i = 2; i <= Math.sqrt(n); i++) {
+        if(n % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+function timSoNguyenToDauTien() {
+    var ketQua = -1;
+    for (var i = 0; i <= arr.length; i++) {
+        if(kiemTraSoNguyenTo(arr[i])) {
+            ketQua = arr[i];
+            break;
+        }
+    }
+    if(ketQua > 1) {
+        document.getElementById("soNguyenToDauTien").innerHTML = ketQua;
+    } else {
+        document.getElementById("soNguyenToDauTien").innerHTML = -1;
+    }
+}
+
+function demSoNguyen() {
+    let dem = 0;
+    for (var i = 0; i <= arr.length; i++) {
+        if(Number.isInteger(arr[i])) {
+            dem++;
+        }
+    }
+    document.getElementById("demSoNguyen").innerHTML = dem;
+}
+
+function soSanhSo() {
+    let demSoAm = 0;
+    let demSoDuong = 0;
+    for (var i = 0; i <= arr.length; i++) {
+        if(arr[i] < 0) {
+            demSoAm++;
+        } else  if (arr[i] >= 0) {
+            demSoDuong++;
+        }
+    }
+    
+    if(demSoAm < demSoDuong) {
+        document.getElementById("soSanhSo").innerHTML = "<div>Có tổng cộng: "+ demSoDuong +" số dương</div>" + "<div>Có tổng cộng: "+ demSoAm +" số âm</div>" + "<div>Tổng số âm < Tổng số dương</div>";
+    } else if (demSoAm > demSoDuong) {
+        document.getElementById("soSanhSo").innerHTML = "<div>Có tổng cộng: "+ demSoDuong +" số dương</div>" + "<div>Có tổng cộng: "+ demSoAm +" số âm</div>" + "<div>Tổng số âm > Tổng số dương</div>";
+    } else {
+        document.getElementById("soSanhSo").innerHTML = "<div>Có tổng cộng: "+ demSoDuong +" số dương</div>" + "<div>Có tổng cộng: "+ demSoAm +" số âm</div>" + "<div>Tổng số âm = Tổng số dương</div>";
+    }
+}
+document.getElementById("soSanhSo").onclick = soSanhSo;
