@@ -1,11 +1,18 @@
 var arrNhanVien = [];
+getStorage();
 
 renderGiaoDien();
 
 function renderGiaoDien() {
     var content = "";
+
+
     for (var i = 0; i < arrNhanVien.length; i++) {
-        var nhanVien = arrNhanVien[i];
+        var nhanVien = new NhanVien();
+        var nhanVienItem = arrNhanVien[i];
+        Object.assign(nhanVien, nhanVienItem);
+
+        // var nhanVien = arrNhanVien[i];
         var luongNhanVien = nhanVien.tinhLuong();
         var xepHang = nhanVien.xepHang();
         content += `
@@ -36,12 +43,13 @@ function renderGiaoDien() {
 
 function themnhanVien() {
     var nhanVien = layGiaTriInput();
+    if (nhanVien) {
+        arrNhanVien.push(nhanVien);
+        saveStorage(arrNhanVien);
+        renderGiaoDien();
 
-    arrNhanVien.push(nhanVien);
-    renderGiaoDien();
-
-    ganGiaTriChoInput("", "", "", "", "", "", "", "");
-    document.getElementById("btnCapNhat").style.display = "none";
+        ganGiaTriChoInput("", "", "", "", "", "", "", "");
+    }
 }
 document.getElementById("btnThemNV").onclick = themnhanVien;
 
@@ -50,37 +58,35 @@ function xoaNhanVien(taiKhoanNhanVien) {
     var index = timViTriNhanVien(taiKhoanNhanVien);
     if (index != -1) {
         arrNhanVien.splice(index, 1);
+        saveStorage(arrNhanVien);
         renderGiaoDien();
     }
+    document.getElementById("tknv").removeAttribute("readOnly");
 }
 
 function editNhanVien(taiKhoanNhanVien) {
     var index = timViTriNhanVien(taiKhoanNhanVien);
-    // document.getElementById("btnThemNV").style.display = "none";
-    // document.getElementById("btnCapNhat").style.display = "block";
     var nhanVien = arrNhanVien[index];
     console.log(nhanVien);
     ganGiaTriChoInput(
-        nhanVien.taiKhoanNhanVien, 
-        nhanVien.tenNhanVien, 
-        nhanVien.email, 
-        nhanVien.pass, 
-        nhanVien.ngayLam, 
-        nhanVien.luongCoBan, 
-        nhanVien.chucVu, 
+        nhanVien.taiKhoanNhanVien,
+        nhanVien.tenNhanVien,
+        nhanVien.email,
+        nhanVien.pass,
+        nhanVien.ngayLam,
+        nhanVien.luongCoBan,
+        nhanVien.chucVu,
         nhanVien.gioLam
     );
-    // document.getElementById("btnThemNV").style.display = "block";
-    // document.getElementById("btnCapNhat").style.display = "none";
     document.getElementById("tknv").readOnly = true;
 }
 
 function capNhatThongTinNhanVien() {
     var nhanVienDaChinhSua = layGiaTriInput();
-    console.log(nhanVienDaChinhSua);
     var index = timViTriNhanVien(nhanVienDaChinhSua.taiKhoanNhanVien);
-    console.log(index);
     arrNhanVien[index] = nhanVienDaChinhSua;
+    saveStorage(arrNhanVien);
     renderGiaoDien();
+    document.getElementById("tknv").removeAttribute("readOnly");
 }
 document.getElementById("btnCapNhat").onclick = capNhatThongTinNhanVien;

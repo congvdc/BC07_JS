@@ -32,13 +32,13 @@ function NhanVien(
             heSoLuong = 0;
         }
         return (this.luongCoBan * heSoLuong);
-     }
+    }
 
 
 
-    this.xepHang = function() {
+    this.xepHang = function () {
         var tongGioLam = this.gioLam;
-        if(tongGioLam >= 192) {
+        if (tongGioLam >= 192) {
             return "Nhân viên xuất sắc";
         } else if (tongGioLam >= 176 && tongGioLam < 192) {
             return "Nhân viên giỏi";
