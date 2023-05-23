@@ -1,13 +1,13 @@
 function ganGiaTriChoInput(
-    taiKhoanNhanVien, 
-    tenNhanVien, 
-    email, 
-    pass, 
-    ngayLam, 
-    luongCoBan, 
-    chucVu, 
+    taiKhoanNhanVien,
+    tenNhanVien,
+    email,
+    pass,
+    ngayLam,
+    luongCoBan,
+    chucVu,
     gioLam
-    ) {
+) {
     document.getElementById("tknv").value = taiKhoanNhanVien;
     document.getElementById("name").value = tenNhanVien;
     document.getElementById("email").value = email;
@@ -34,25 +34,28 @@ function layGiaTriInput() {
     var _email = document.getElementById("email").value;
     var _pass = document.getElementById("password").value;
     var _ngayLam = document.getElementById("datepicker").value;
-    var _luongCoBan = document.getElementById("luongCB").value * 1;
+    var _luongCoBan = document.getElementById("tbLuongCB").value;
     var _chucVu = document.getElementById("chucvu").value;
-    var _gioLam = document.getElementById("gioLam").value * 1;
+    var _gioLam = document.getElementById("gioLam").value;
 
     var valid = true;
-    valid = 
-    kiemTraRong(_taiKhoanNhanVien, "tbTKNV") & kiemTraRong(_tenNhanVien, "tbTen") &
-    kiemTraRong(_email, "tbEmail") & 
-    kiemTraRong(_pass, "tbMatKhau") &
-    kiemTraRong(_ngayLam, "tbNgay") &
-    kiemTraRong(_luongCoBan, "tbLuongCB") &
-    kiemTraRong(_chucVu, "tbChucVu") &
-    kiemTraRong(_gioLam, "tbGioLam");
+    valid =
+        kiemTraRong(_taiKhoanNhanVien, "tbTKNV") & kiemTraRong(_tenNhanVien, "tbTen") &
+        kiemTraRong(_email, "tbEmail") &
+        kiemTraRong(_pass, "tbMatKhau") &
+        kiemTraRong(_ngayLam, "tbNgay") &
+        kiemTraRong(_luongCoBan, "tbLuongCB") &
+        kiemTraRong(_chucVu, "tbChucVu") &
+        kiemTraRong(_gioLam, "tbGiolam");
 
+    valid &= kiemTraTaiKhoan(_taiKhoanNhanVien,
+        "tbTKNV");
+    valid &= kiemTraTenNhanVien(_tenNhanVien, "tbTen");
     valid &= kiemTraEmail(_email, "tbEmail");
-
-    //kiemTraMatKhau(pass, "tbMatKhau") & kiemTraTenNhanVien(tenNhanVien, "tbTen");
-    // valid &= kiemTraMatKhau(pass, "tbMatKhau");
-    // valid &= kiemTraTenNhanVien(tenNhanVien, "tbTen");
+    valid &= kiemTraMatKhau(_pass, "tbMatKhau");
+    valid &= kiemTraNgay(_ngayLam, "tbNgay");
+    valid &= kiemTraLuongCB(_luongCoBan, "tbLuongCB");
+    valid &= kiemTraGioLam(_gioLam, "tbGiolam");
 
     if (!valid) {
         return;
@@ -78,7 +81,7 @@ function saveStorage(arrNhanVien) {
 
 function getStorage() {
     var arrNhanVienLocal = JSON.parse(localStorage.getItem("arrNhanVien"));
-    if(arrNhanVienLocal != null) {
+    if (arrNhanVienLocal != null) {
         arrNhanVien = arrNhanVienLocal;
     }
 }
