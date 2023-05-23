@@ -29,7 +29,7 @@ function NhanVien(
         } else if (heSoLuong == "Sếp") {
             heSoLuong = 3;
         } else {
-            heSoLuong = 0;
+            // heSoLuong = 0;
         }
         return (this.luongCoBan * heSoLuong);
     }
